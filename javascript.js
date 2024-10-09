@@ -39,7 +39,7 @@ function createBoxes() {
             box.style.backgroundColor = 'rgb(' + color.join(',') + ')';
             box.classList.remove('white')
         } else {
-            box.style.opacity += '0.1';
+            console.log('help')
         }
     });
 });
