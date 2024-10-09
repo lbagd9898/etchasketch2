@@ -1,4 +1,4 @@
-createGrid(10)
+createGrid(5)
 
 function createGrid(number) {
     createColumns(number)
@@ -8,9 +8,10 @@ function createGrid(number) {
 function createColumns(number) {
     const container = document.querySelector('#container');
     let height = 100 / number 
+    console.log(height)
     for (i=0; i<number; i++) {
         let row = document.createElement('div');
-        row.style.height = number + 'vh';
+        row.style.height = height + 'vh';
         row.style.width = '100%';
         row.style.display = 'flex';
         row.classList.add('column')
@@ -37,9 +38,10 @@ function createBoxes() {
         if (box.classList.contains('white')) {
             color = randomRgbColor();
             box.style.backgroundColor = 'rgb(' + color.join(',') + ')';
+            box.style.opacity = '0.1'
             box.classList.remove('white')
         } else {
-            console.log('help')
+            box.style.opacity = parseFloat(box.style.opacity) + 0.1;
         }
     });
 });
@@ -87,9 +89,8 @@ document.querySelector('#change').addEventListener('click', () => {
 });
 
 document.querySelector('#erase').addEventListener('click', () => {
-    let boxes = document.querySelectorAll('.box').forEach(function(box) {
-        box.style.backgroundColor = 'white';
-    })
+    input = document.querySelector('#input').value
+    changeGrid(input);
 })
 
 
