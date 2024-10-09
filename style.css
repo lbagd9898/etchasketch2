@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    gap: 15px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 700px;
+    height: 700px;
+}
